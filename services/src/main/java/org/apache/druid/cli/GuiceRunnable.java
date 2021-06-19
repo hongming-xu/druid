@@ -112,6 +112,7 @@ public abstract class GuiceRunnable implements Runnable
       }
 
       try {
+        /**会先执行LifecycleModule.getLifecycle中的start方法 {@link org.apache.druid.guice.LifecycleModule#getLifecycle(Injector)}  */
         lifecycle.start();
       }
       catch (Throwable t) {
