@@ -441,11 +441,18 @@ public class Lifecycle
             break;
           }
         }
+
+        if(doStart && o.getClass().getName().contains("DruidCoordinator")) {
+          System.out.println("Lifecycle.AnnotationBasedHandler.start()------------------------James Xu----");
+        }
+
         if (doStart) {
           log.debug("Invoking start method[%s] on object[%s].", method, o);
           method.invoke(o);
         }
       }
+      if(o.getClass().getName().contains("DruidCoordinator"))
+      System.out.println("DruidCoordinator all methods complete done   [NORMAL]");
     }
 
     @Override

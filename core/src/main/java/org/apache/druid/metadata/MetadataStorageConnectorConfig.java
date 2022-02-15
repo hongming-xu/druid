@@ -69,6 +69,7 @@ public class MetadataStorageConnectorConfig
   {
     if (connectURI == null) {
       return StringUtils.format("jdbc:derby://%s:%s/druid;create=true", host, port);
+//      return "jdbc:mysql://localhost:3306/druid";
     }
     return connectURI;
   }
